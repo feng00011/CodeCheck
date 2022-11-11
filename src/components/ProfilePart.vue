@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-collapse v-model="activeName" accordion @change="handleChange">
-      <el-collapse-item title="修改 app/performance" name="1">
+      <el-collapse-item title="Modify app/performance" name="1">
         <el-row class="demo-autocomplete">
           <el-col :span="12" :offset="3">
             <div
@@ -15,7 +15,7 @@
               class="inline-input"
               v-model="state1"
               :fetch-suggestions="querySearch"
-              placeholder="请输入内容"
+              placeholder="Please enter the content"
               @select="handleSelect"
             ></el-autocomplete>
           </el-col>
@@ -33,7 +33,7 @@
               class="inline-input"
               v-model="state2"
               :fetch-suggestions="querySearch2"
-              placeholder="请输入内容"
+              placeholder="Please enter the content"
             ></el-autocomplete>
           </el-col>
         </el-row>
@@ -43,7 +43,7 @@
         <el-row>
           <el-col :span="4" :offset="3"
             ><el-button @click="drawer = true" type="info"
-              >新增</el-button
+              >Add</el-button
             ></el-col
           >
           <!-- 新增的按钮 -->
@@ -56,7 +56,7 @@
       </el-collapse-item>
 
       <el-collapse-item
-        title="修改 traffic distribution/packet_format"
+        title="Modify traffic distribution/packet_format"
         name="2"
       >
         <el-form
@@ -74,7 +74,7 @@
         </el-form>
       </el-collapse-item>
 
-      <el-collapse-item title="概览——提交" name="3">
+      <el-collapse-item title="Overview - Submit" name="3">
         <!-- 思路：上面负责选择，最后数据合并到这张form里，统合提交。 -->
         <el-form
           :label-position="labelPosition"
@@ -105,7 +105,7 @@
               type="primary"
               @click="onSubmit"
               style="margin-left: 16px"
-              >提交</el-button
+              >Submit</el-button
             >
           </el-form-item>
         </el-form>

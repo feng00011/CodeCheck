@@ -7,7 +7,7 @@
     label="app"
     label-width="150px"
     :rules="[
-      { required: true, message: '请输入app', trigger: 'blur' }
+      { required: true, message: 'Input app please', trigger: 'blur' }
     ]"
   >
     <el-input v-model="dynamicValidateForm.appName"></el-input>
@@ -19,15 +19,15 @@
     :key="domain.key"
     :prop="'domains.' + index + '.value'"
     :rules="{
-      required: true, message: '内容不能为空', trigger: 'blur'
+      required: true, message: 'Content cannot be empty', trigger: 'blur'
     }"
   >
     <el-input v-model="domain.value" type="textarea"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-    <el-button @click="addDomain">新增</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+    <el-button type="primary" @click="submitForm('dynamicValidateForm')">Submit</el-button>
+    <el-button @click="addDomain">Add</el-button>
+    <el-button @click="resetForm('dynamicValidateForm')">Reset</el-button>
   </el-form-item>
 </el-form>
 </div>
@@ -53,7 +53,7 @@ export default {
             // console.log(this[formName]);
             // 获取列表信息
             if(this[formName].appName.trim() != '' && this[formName].domains.length > 0){
-              alert('添加依赖成功')
+              alert('Success')
               let msg = JSON.stringify(this.dynamicValidateForm)
               this.$store.dispatch('getAdds',msg).then((res)=>{
                 // 将数据提交给vuex，进行保存

@@ -7,10 +7,10 @@
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <el-menu-item index="1"><router-link to='/home'>处理中心</router-link></el-menu-item>
+  <el-menu-item index="1"><router-link to='/home'>Processing center</router-link></el-menu-item>
   <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1"><router-link to='/edit'>添加依赖</router-link></el-menu-item>
+    <template slot="title">My workbench</template>
+    <el-menu-item index="2-1"><router-link to='/edit'>Add Dependency</router-link></el-menu-item>
   </el-submenu>
 
 </el-menu>
