@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <el-row :gutter="20">
+      <el-col :span="2"><div class="grid-content"></div></el-col>
+      <el-col :span="20"
+        ><div class="grid-content bg-purple">
+          <el-container>
+            <el-header>
+              <TopBar></TopBar>
+            </el-header>
+            <el-main>
+              <el-row>
+                <el-col :span="12"
+                  ><div class="grid-content bg-purple">
+                    <Code></Code></div
+                ></el-col>
+                <el-col :span="12"
+                  ><div class="grid-content bg-purple-light">
+                    <Profile></Profile></div
+                ></el-col>
+              </el-row>
+            </el-main>
+          </el-container></div
+      ></el-col>
+      <el-col :span="2"><div class="grid-content"></div></el-col>
+    </el-row> -->
+
+    <TopBar></TopBar>
+    <router-view></router-view>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TopBar from "./components/TopBar.vue";
+import Container from "./components/MainContainer.vue";
+
 
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    HelloWorld
-  }
-}
+    TopBar,
+    // Container
+
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang = 'less'>
+
 </style>
