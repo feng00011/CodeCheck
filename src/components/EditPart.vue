@@ -22,7 +22,7 @@
       required: true, message: 'Content cannot be empty', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value" type="textarea"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
+    <el-input v-model="domain.value" type="textarea"></el-input><el-button @click.prevent="removeDomain(domain)">Delete</el-button>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('dynamicValidateForm')">Submit</el-button>

@@ -51,6 +51,7 @@ const store = new Vuex.Store({
             let res = Object.assign({},context.state.codeMsg,regMsg)
             // res = JSON.stringify(res)
             // 解开上面的注释，使得传递的数据为JSON字符串
+            console.log(res);
             reqPost(res);
 
         }
