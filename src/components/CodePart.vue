@@ -3,7 +3,7 @@
     <div id="mask" v-if="showMask"></div>
     <!-- 遮盖层，接收ProfilePart传来的数据 -->
     <div id="code">
-      <codemirror v-model="code" :options="cmOption" />
+      <codemirror v-model="code" :options="cmOption" class="code" ref="myCm" />
     </div>
   </div>
 </template>
@@ -74,6 +74,23 @@ export default {
       },
     },
   },
+  mounted(){
+    let that = this;
+    that.clientHeight = `${document.documentElement.clientHeight}`;//获取浏览器可视区域高度
+    // // 获取codemirror对象
+    that.editor = this.$refs.myCm.codemirror;
+    // // 设置codemirror高度
+    that.editor.setSize('auto',this.clientHeight-45);
+    
+    // 监听屏幕
+    window.onresize = function () {
+      that.clientHeight = `${document.documentElement.clientHeight}`;
+      // 设置代码区域高度
+      that.editor.setSize('auto',parseFloat(that.clientHeight)-45);
+    }
+
+  
+  }
 };
 </script>
 <style lang="css" scoped>
@@ -91,7 +108,7 @@ export default {
   z-index: 998;
 }
 #code {
-  height: 800px;
-  background-color: aqua;
+  /* height: 800px; */
+  background-color: fff;
 }
 </style>
